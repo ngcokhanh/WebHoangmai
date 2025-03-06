@@ -32,7 +32,7 @@ class AdminCategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'string|max:255',
+            'description' => 'nullable|max:255',
         ]);
 
         Category::create($request->all());
@@ -63,7 +63,7 @@ class AdminCategoryController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'description' => 'string|max:255',
+            'description' => 'nullable|max:255',
         ]);
 
         $category = Category::findOrFail($id);

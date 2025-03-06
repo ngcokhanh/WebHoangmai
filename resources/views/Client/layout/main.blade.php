@@ -57,6 +57,13 @@
 			text-decoration: none;
 			padding: 0.5rem 1rem;
 			display: block;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		.navbar .menu ul li a:hover {
+			background-color: white;
+			color: #ff6600;
+			border-radius: 5px;
 		}
 
 		.navbar .menu ul li .btn {
@@ -66,6 +73,12 @@
 			padding: 0.5rem 1rem;
 			cursor: pointer;
 			border-radius: 5px;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		.navbar .menu ul li .btn:hover {
+			background-color: #ff6600;
+			color: white;
 		}
 
 		.navbar .menu ul li ul {
@@ -84,6 +97,12 @@
 
 		.navbar .menu ul li ul li {
 			width: 200px;
+		}
+
+		.navbar .menu ul li ul li a:hover {
+			background-color: white;
+			color: #ff6600;
+			border-radius: 5px;
 		}
 
 		.motto {
@@ -116,6 +135,12 @@
 			padding: 1rem;
 			border-radius: 5px;
 			text-align: center;
+			transition: transform 0.3s, box-shadow 0.3s;
+		}
+
+		.article:hover {
+			transform: translateY(-5px);
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 		}
 
 		.article img {
@@ -137,6 +162,13 @@
 			cursor: pointer;
 			border-radius: 5px;
 			text-decoration: none;
+			transition: background-color 0.3s, color 0.3s;
+		}
+
+		.article .btn:hover {
+			background-color: white;
+			color: #ff6600;
+			border: 1px solid #ff6600;
 		}
 
 		.introduction {
@@ -190,6 +222,11 @@
 		.footer .footer-section ul li a {
 			color: white;
 			text-decoration: none;
+			transition: color 0.3s;
+		}
+
+		.footer .footer-section ul li a:hover {
+			color: #ffcc99;
 		}
 
 		.footer .social-icons {
@@ -202,6 +239,17 @@
 			color: white;
 			margin: 0 0.5rem;
 			font-size: 1.5rem;
+		}
+
+		.footer .social-icons img {
+			width: 40px;
+			height: 40px;
+			border-radius: 50%;
+			transition: transform 0.3s;
+		}
+
+		.footer .social-icons img:hover {
+			transform: scale(1.1);
 		}
 
 		.popup-overlay {
@@ -241,10 +289,13 @@
 			cursor: pointer;
 			border-radius: 5px;
 			font-size: 1rem;
+			transition: background-color 0.3s, color 0.3s;
 		}
 
 		.popup-content button:hover {
-			background-color: #e65c00;
+			background-color: white;
+			color: #ff6600;
+			border: 1px solid #ff6600;
 		}
 	</style>
 	<!-- Swiper CSS -->
@@ -255,8 +306,7 @@
 <body>
 	<div class="navbar">
 		<div class="logo">
-			<img src="https://lh6.googleusercontent.com/J_0TjfSTz_CJvCiQ5Vs5ZaQiMa5zmzZbGTKDffUjK0GZWOE2RPUpTPYUMSG3yOvA12OHjW8zMnq3yg0JLsyhEyw=w16383"
-				alt="Logo">
+			<img src="{{ Storage::url('images/LOGOHM.jpg') }}" alt="Logo">
 		</div>
 		<div class="menu">
 			<ul>
@@ -313,9 +363,7 @@
 			<div class="footer-section">
 				<img style="	height: 80px;
 								margin-right: 1rem;
-								border-radius: 10px;"
-					src="https://lh6.googleusercontent.com/J_0TjfSTz_CJvCiQ5Vs5ZaQiMa5zmzZbGTKDffUjK0GZWOE2RPUpTPYUMSG3yOvA12OHjW8zMnq3yg0JLsyhEyw=w16383"
-					alt="Logo">
+								border-radius: 10px;" src="{{ Storage::url('images/LOGOHM.jpg') }}" alt="Logo">
 			</div>
 
 			<div class="footer-section">
@@ -336,9 +384,10 @@
 			<div class="footer-section">
 				<h3>Kết Nối Với Chúng Tôi</h3>
 				<div class="social-icons">
-					<a href="https://facebook.com" target="_blank"><i class="fa fa-facebook">facebook</i></a>
-					<a href="https://instagram.com" target="_blank"><i class="fa fa-instagram">instagram</i></a>
-					<a href="https://zalo.com" target="_blank"><i class="fa fa-linkedin">zalo</i></a>
+					<a href="https://facebook.com" target="_blank"><img src="{{ Storage::url('images/facebook.png') }}"
+							alt="Facebook"></a>
+					<a href="https://zalo.com" target="_blank"><img src="{{ Storage::url('images/zalo.png') }}"
+							alt="Zalo"></a>
 				</div>
 			</div>
 		</div>

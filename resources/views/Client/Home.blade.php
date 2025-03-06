@@ -118,7 +118,7 @@
         </div>
     </div>
     <div class="motto">
-        "Châm ngôn của công ty hoặc trang web của bạn"
+        "Dấu ấn Hoàng Mai - Xây dựng tương lai"
     </div>
     <div class="featured-articles">
         <h2>Bài Viết Mới Nhất</h2>
@@ -135,7 +135,7 @@
 
     @foreach ($intros as $intro)
         <div class="introduction">
-            <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->image }}">
+
             <div>
                 <a href="{{ route('gioithieu') }}">
                     <h2>{{$intro->title}}</h2>
@@ -144,6 +144,7 @@
                     {{Str::limit($intro->content, 500)}}
                 </p>
             </div>
+            <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->image }}">
         </div>
     @endforeach
 
@@ -167,4 +168,3 @@
         });
     </script>
 @endsection
-
