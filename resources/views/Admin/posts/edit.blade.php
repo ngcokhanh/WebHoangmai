@@ -97,7 +97,7 @@
             </div>
             <div class="form-group">
                 <label for="content">Nội Dung</label>
-                <textarea id="content" name="content" required>{{ $post->content }}</textarea>
+                <textarea id="editor" name="content" required>{{ $post->content }}</textarea>
             </div>
             <div class="form-group">
                 <label for="category">Danh Mục</label>

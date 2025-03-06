@@ -14,6 +14,8 @@ use App\Http\Controllers\admin\AdminPostController;
 use App\Http\Controllers\admin\AdminBannerController;
 use App\Http\Controllers\admin\AdminIntroController;
 use App\Http\Controllers\admin\AdminCategoryController;
+use App\Http\Controllers\CKEditorController;
+
 
 
 
@@ -91,4 +93,5 @@ Route::resource('admin/categories', AdminCategoryController::class)->names([
 
 route::get('admin/account', [AdminController::class, 'adminaccount'])->name('admin.account')->middleware('admin');
 
+Route::post('/ckeditor/upload', [CKEditorController::class, 'upload'])->name('ckeditor.upload');
 

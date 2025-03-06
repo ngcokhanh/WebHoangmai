@@ -43,7 +43,7 @@ class HomeController extends Controller
         $posts = Post::where('category_id', $id)
             ->where('is_published', '1')
             ->orderBy('created_at', 'desc')
-            ->paginate(6);
+            ->paginate(8);
         return view('Client.Category', compact('category', 'posts', 'categories'));
     }
 

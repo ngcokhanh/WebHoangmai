@@ -115,7 +115,7 @@
             </div>
             <div class="form-group">
                 <label for="content">Nội Dung</label>
-                <textarea id="content" name="content" required></textarea>
+                <textarea id="editor" name="content" required></textarea>
             </div>
             <div class="form-group">
                 <label for="is_home">Xuất hiện tại trang chủ</label>

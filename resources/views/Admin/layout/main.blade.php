@@ -131,6 +131,8 @@
             background-color: #e65c00;
         }
     </style>
+
+    <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -184,6 +186,39 @@
             document.querySelector('.popup-overlay').style.display = 'none';
         }
     </script>
+
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                toolbar: [
+                    'heading', '|', 'bold', 'italic', 'underline', '|',
+                    'fontFamily', 'fontSize', 'fontColor', 'bulletedList', 'numberedList',
+                    '|', 'blockQuote', 'mediaEmbed', 'undo', 'redo'
+                ],
+                fontFamily: {
+                    options: [
+                        'default', 'Arial, sans-serif', 'Courier New, Courier, monospace',
+                        'Georgia, serif', 'Times New Roman, Times, serif', 'Verdana, sans-serif'
+                    ]
+                },
+                fontSize: {
+                    options: ['small', 'default', 'big', '18px', '24px', '32px'],
+                    supportAllValues: true
+                },
+                fontColor: {
+                    columns: 6,
+                    documentColors: 12
+                },
+                ckfinder: {
+                    uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+                }
+            })
+            .catch(error => {
+                console.error(error);
+            });
+    </script>
+
+
 </body>
 
 </html>

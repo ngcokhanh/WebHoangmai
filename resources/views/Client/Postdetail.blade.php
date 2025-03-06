@@ -47,7 +47,7 @@
         <h1>{{ $post->title }}</h1>
         <p><em>Đăng vào: {{ $post->created_at }}</em></p>
         <img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">
-        <div class="post-content">
+        <div class="post-content" >
             {!! $post->content !!}
         </div>
         @if($post->video)

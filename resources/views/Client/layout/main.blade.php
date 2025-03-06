@@ -301,6 +301,7 @@
 	<!-- Swiper CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 
+	<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 </head>
 
 <body>
@@ -418,6 +419,38 @@
 			},
 		});
 	</script>
+
+	<script>
+		ClassicEditor
+			.create(document.querySelector('#editor'), {
+				toolbar: [
+					'heading', '|', 'bold', 'italic', 'underline', '|',
+					'fontFamily', 'fontSize', 'fontColor', 'bulletedList', 'numberedList',
+					'|', 'blockQuote', 'mediaEmbed', 'imageUpload', 'undo', 'redo'
+				],
+				fontFamily: {
+					options: [
+						'default', 'Arial, sans-serif', 'Courier New, Courier, monospace',
+						'Georgia, serif', 'Times New Roman, Times, serif', 'Verdana, sans-serif'
+					]
+				},
+				fontSize: {
+					options: ['small', 'default', 'big', '18px', '24px', '32px'],
+					supportAllValues: true
+				},
+				fontColor: {
+					columns: 6,
+					documentColors: 12
+				},
+				ckfinder: {
+					uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+				}
+			})
+			.catch(error => {
+				console.error(error);
+			});
+	</script>
+
 
 </body>
 
