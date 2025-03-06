@@ -36,7 +36,7 @@ class AdminIntroController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'content' => 'required',
             'is_home' => 'required|boolean',
-            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:20000',
+            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:50000',
         ]);
 
         // Kiểm tra file trước khi lưu
@@ -82,7 +82,7 @@ class AdminIntroController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
             'content' => 'required',
             'is_home' => 'required|boolean',
-            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:20000',
+            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:50000',
         ]);
 
         $intro = Introduction::findOrFail($id);

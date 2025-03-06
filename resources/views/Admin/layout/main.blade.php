@@ -29,6 +29,7 @@
         }
 
         .navbar .logo img {
+            border-radius: 5px;
             height: 40px;
             margin-right: 1rem;
         }
@@ -135,7 +136,7 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="https://via.placeholder.com/40" alt="Logo">
+            <img src="{{ Storage::url('images/LOGOHM.jpg') }}" alt="Logo">
             <h1>Admin Dashboard</h1>
         </div>
 

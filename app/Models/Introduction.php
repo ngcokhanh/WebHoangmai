@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Introduction extends Model
 {
     use HasFactory;
-    protected $fillable = ['title', 'content', 'image', 'video'];
+    protected $fillable = ['title', 'content', 'image', 'video', 'is_home'];
 }

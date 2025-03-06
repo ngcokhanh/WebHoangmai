@@ -38,7 +38,7 @@ class AdminPostController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:20000',
+            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:50000',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
             'is_published' => 'required|boolean',
@@ -90,7 +90,7 @@ class AdminPostController extends Controller
         $request->validate([
             'title' => 'required|string|max:255',
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:20000',
+            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:50000',
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
             'is_published' => 'required|boolean',

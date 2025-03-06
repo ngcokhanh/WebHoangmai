@@ -93,7 +93,7 @@
                     <th>ID</th>
                     <th>Hình Ảnh</th>
                     <th>Tiêu Đề</th>
-                    <th>Xuất Bản</th>
+                    <th>Hiển thị</th>
                     <th>Thao tác</th>
                 </tr>
             </thead>
@@ -103,7 +103,7 @@
                         <td>{{ $intro->id }}</td>
                         <td><img src="{{ Storage::url($intro->image) }}" alt="image" class="admin-avatar"></td>
                         <td>{{ $intro->title }}</td>
-                        <td>{{ $intro->is_published ? 'Có' : 'Không' }}</td>
+                        <td>{{ $intro->is_home ? 'Có' : 'Không' }}</td>
                         <td class="admin-actions">
                             <a href="{{ route('admin.intros.edit', $intro->id) }}"><button
                                     class="admin-btn-primary">Sửa</button></a>
