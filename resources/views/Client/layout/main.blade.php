@@ -6,6 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Trang Chủ</title>
 	<style>
+		/* Scoped CSS for main.blade.php */
 		body {
 			font-family: Arial, sans-serif;
 			margin: 0;
@@ -297,10 +298,54 @@
 			color: #ff6600;
 			border: 1px solid #ff6600;
 		}
+
+		/* Responsive Design */
+		@media (max-width: 768px) {
+			.navbar .menu ul {
+				flex-direction: column;
+			}
+
+			.navbar .menu ul li {
+				margin: 0.5rem 0;
+			}
+
+			.article {
+				width: 45%;
+			}
+
+			.introduction {
+				flex-direction: column;
+			}
+
+			.introduction img {
+				width: 100%;
+			}
+		}
+
+		@media (max-width: 480px) {
+			.article {
+				width: 100%;
+			}
+
+			.introduction {
+				padding: 1rem;
+			}
+
+			.footer .footer-content {
+				flex-direction: column;
+				align-items: center;
+			}
+
+			.footer .footer-section {
+				width: 100%;
+				text-align: center;
+			}
+		}
 	</style>
 	<!-- Swiper CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 
+	<link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.css">
 	<script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 </head>
 
@@ -401,7 +446,7 @@
 	</script>
 
 	<!-- Swiper JS -->
-	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+	<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 	<script>
 		var swiper = new Swiper(".swiper", {
 			loop: true,
@@ -418,7 +463,7 @@
 				clickable: true,
 			},
 		});
-	</script>
+	</script> -->
 
 	<script>
 		ClassicEditor
@@ -426,7 +471,7 @@
 				toolbar: [
 					'heading', '|', 'bold', 'italic', 'underline', '|',
 					'fontFamily', 'fontSize', 'fontColor', 'bulletedList', 'numberedList',
-					'|', 'blockQuote', 'mediaEmbed', 'imageUpload', 'undo', 'redo'
+					'|', 'blockQuote', 'mediaEmbed', 'undo', 'redo'
 				],
 				fontFamily: {
 					options: [

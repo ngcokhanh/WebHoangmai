@@ -73,17 +73,17 @@
             <img id="map-image" src="{{ Storage::url('images/Bandoditichhm.jpg') }}" usemap="#image-map" width="800"
                 height="490">
             <map name="image-map">
-                <area shape="circle" coords="375,88,10" href="{{route('post.detail', '13')}}" alt="Khu tưởng niệm HVT">
-                <area shape="circle" coords="353,95,10" href="{{route('post.detail', '18')}}" alt="Chùa nga my">
-                <area shape="circle" coords="431,108,10" href="{{route('post.detail', '11')}}" alt="Đình Mai động">
-                <area shape="circle" coords="327,122,10" href="{{route('post.detail', '10')}}" alt="Đình Tương mai">
-                <area shape="circle" coords="427,148,10" href="{{route('post.detail', '12')}}" alt="Đền lư giang">
-                <area shape="circle" coords="588,226,10" href="{{route('post.detail', '16')}}" alt="Chùa nam dư hạ">
-                <area shape="circle" coords="606,224,10" href="{{route('post.detail', '15')}}" alt="Đình Nam dư hạ">
-                <area shape="circle" coords="268,327,10" href="{{route('post.detail', '17')}}" alt="Chùa tứ kỳ">
-                <area shape="circle" coords="407,272,10" href="{{route('post.detail', '19')}}" alt="Công viên yên sở">
-                <area shape="circle" coords="184,348,10" href="{{route('post.detail', '20')}}" alt="Hồ linh đàm">
-                <area shape="circle" coords="240,160,10" href="{{route('post.detail', '14')}}" alt="Công viên yên sở">
+                <area shape="circle" coords="375,88,15" href="{{route('post.detail', '13')}}" alt="Khu tưởng niệm HVT">
+                <area shape="circle" coords="353,95,15" href="{{route('post.detail', '18')}}" alt="Chùa nga my">
+                <area shape="circle" coords="431,108,15" href="{{route('post.detail', '11')}}" alt="Đình Mai động">
+                <area shape="circle" coords="327,122,15" href="{{route('post.detail', '10')}}" alt="Đình Tương mai">
+                <area shape="circle" coords="427,148,15" href="{{route('post.detail', '12')}}" alt="Đền lư giang">
+                <area shape="circle" coords="588,226,15" href="{{route('post.detail', '16')}}" alt="Chùa nam dư hạ">
+                <area shape="circle" coords="606,224,15" href="{{route('post.detail', '15')}}" alt="Đình Nam dư hạ">
+                <area shape="circle" coords="268,327,15" href="{{route('post.detail', '17')}}" alt="Chùa tứ kỳ">
+                <area shape="circle" coords="407,272,15" href="{{route('post.detail', '19')}}" alt="Công viên yên sở">
+                <area shape="circle" coords="184,348,15" href="{{route('post.detail', '20')}}" alt="Hồ linh đàm">
+                <area shape="circle" coords="240,160,15" href="{{route('post.detail', '14')}}" alt="Công viên yên sở">
             </map>
         </div>
 

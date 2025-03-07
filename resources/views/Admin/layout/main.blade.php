@@ -132,6 +132,7 @@
         }
     </style>
 
+    <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/44.3.0/ckeditor5.css">
     <script src="https://cdn.ckeditor.com/ckeditor5/39.0.1/classic/ckeditor.js"></script>
 </head>
 
@@ -193,7 +194,7 @@
                 toolbar: [
                     'heading', '|', 'bold', 'italic', 'underline', '|',
                     'fontFamily', 'fontSize', 'fontColor', 'bulletedList', 'numberedList',
-                    '|', 'blockQuote', 'mediaEmbed', 'undo', 'redo'
+                    '|', 'blockQuote', 'mediaEmbed', 'undo', 'redo', 'uploadImage'
                 ],
                 fontFamily: {
                     options: [
@@ -211,6 +212,9 @@
                 },
                 ckfinder: {
                     uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
+                },
+                mediaEmbed: {
+                    previewsInData: true
                 }
             })
             .catch(error => {

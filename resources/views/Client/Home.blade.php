@@ -2,7 +2,8 @@
 
 @section('content')
     <style>
-        .article {
+        /* Scoped CSS for Home.blade.php */
+        .home-article {
             width: 22%;
             background-color: #ffcc99;
             margin: 1rem 0;
@@ -14,7 +15,7 @@
             align-items: center;
         }
 
-        .article img {
+        .home-article img {
             width: 100%;
             height: 200px;
             object-fit: cover;
@@ -22,13 +23,13 @@
             margin-bottom: 1rem;
         }
 
-        .article h3 {
+        .home-article h3 {
             color: #ff6600;
             margin: 1rem 0;
             flex-grow: 1;
         }
 
-        .article .btn {
+        .home-article .btn {
             background-color: #ff6600;
             color: white;
             border: none;
@@ -38,38 +39,37 @@
             text-decoration: none;
         }
 
-        .slideshow {
+        .home-slideshow {
             width: 100%;
-            max-width: 1500px;
             height: 500px;
             margin: auto;
             overflow: hidden;
             position: relative;
-            border-radius: 10px;
+            /* border-radius: 10px; */
         }
 
-        .slideshow .swiper {
+        .home-slideshow .swiper {
             width: 100%;
             height: 100%;
             display: flex;
             align-items: center;
         }
 
-        .slideshow .swiper-slide {
+        .home-slideshow .swiper-slide {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100%;
         }
 
-        .slideshow img {
+        .home-slideshow img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 10px;
+            /* border-radius: 10px; */
         }
 
-        .introduction {
+        .home-introduction {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -80,7 +80,7 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .introduction img {
+        .home-introduction img {
             width: 100%;
             max-width: 600px;
             height: auto;
@@ -88,25 +88,54 @@
             margin-bottom: 1rem;
         }
 
-        .introduction h2 {
+        .home-introduction h2 {
             color: #ff6600;
             margin-bottom: 1rem;
             text-align: center;
         }
 
-        .introduction p {
+        .home-introduction p {
             color: #666;
             text-align: center;
             max-width: 800px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .home-article {
+                width: 45%;
+            }
+
+            .home-slideshow {
+                height: 300px;
+            }
+
+            .home-introduction {
+                padding: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .home-article {
+                width: 100%;
+            }
+
+            .home-slideshow {
+                height: 200px;
+            }
+
+            .home-introduction {
+                padding: 0.5rem;
+            }
+        }
     </style>
 
-    <div class="slideshow">
-        <div class="slideshow swiper">
+    <div class="home-slideshow">
+        <div class="home-slideshow swiper">
             <div class="swiper-wrapper">
                 @foreach($banners as $banner)
                     <div class="swiper-slide">
-                        <a href="{{ $banner->link }}">
+                        <a href="{{ $banner->link }}" style="width: 100%; height: 100%;">
                             <img src="{{ Storage::url($banner->image) }}" alt="Banner">
                         </a>
                     </div>
@@ -124,7 +153,7 @@
         <h2>Bài Viết Mới Nhất</h2>
         <div class="articles">
             @foreach ($posts as $item)
-                <div class="article">
+                <div class="home-article">
                     <img src="{{Storage::url($item->image)}}" alt="{{ $item->title }}">
                     <h3>{{ $item->title }}</h3>
                     <a href="{{ route('post.detail', $item->id) }}" class="btn">Xem Chi Tiết</a>
@@ -134,8 +163,7 @@
     </div>
 
     @foreach ($intros as $intro)
-        <div class="introduction">
-
+        <div class="home-introduction">
             <div>
                 <a href="{{ route('gioithieu') }}">
                     <h2>{{$intro->title}}</h2>

@@ -10,35 +10,17 @@ class CKEditorController extends Controller
     public function upload(Request $request)
     {
         if ($request->hasFile('upload')) {
-            // Lấy file từ request
-            $file = $request->file('upload');
+            $originName = $request->file('upload')->getClientOriginalName();
+            $fileName = pathinfo($originName, PATHINFO_FILENAME);
+            $extension = $request->file('upload')->getClientOriginalExtension();
+            $fileName = $fileName . '.' . $extension;
 
-            // Xác định loại file (ảnh hoặc video)
-            $extension = $file->getClientOriginalExtension();
-            $allowedImageExtensions = ['jpg', 'jpeg', 'png', 'gif', 'webp'];
-            $allowedVideoExtensions = ['mp4', 'mov', 'avi', 'wmv'];
+            $imageUrl = Storage::put('ckeditor/uploads', request()->file('upload'));
 
-            // Kiểm tra loại file hợp lệ
-            if (in_array($extension, $allowedImageExtensions)) {
-                $folder = 'public/uploads/images';
-            } elseif (in_array($extension, $allowedVideoExtensions)) {
-                $folder = 'public/uploads/videos';
-            } else {
-                return response()->json(["error" => ["message" => "Loại file không được hỗ trợ!"]]);
-            }
+            $url = Storage::url($imageUrl);
 
-            // Tạo tên file duy nhất
-            $filename = time() . '_' . $file->getClientOriginalName();
+            return response()->json(['url' => $url, 'fileName' => $fileName, 'uploaded' => 1]);
 
-            // Lưu file vào thư mục storage/public/uploads/...
-            $path = $file->storeAs($folder, $filename);
-
-            // Trả về URL để CKEditor hiển thị file
-            return response()->json([
-                "url" => Storage::url($path)
-            ]);
         }
-
-        return response()->json(["error" => ["message" => "Không thể upload file!"]]);
     }
 }
