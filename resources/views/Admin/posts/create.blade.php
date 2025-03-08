@@ -86,8 +86,8 @@
                 <input type="file" id="video" name="video">
             </div>
             <div class="form-group">
-                <label for="content">Nội Dung</label>
-                <textarea id="editor" name="content" required></textarea>
+                <label for="editor">Nội Dung</label>
+                <textarea id="editor" name="content"></textarea>
             </div>
             <div class="form-group">
                 <label for="category">Danh Mục</label>

@@ -192,24 +192,11 @@
         ClassicEditor
             .create(document.querySelector('#editor'), {
                 toolbar: [
-                    'heading', '|', 'bold', 'italic', 'underline', '|',
-                    'fontFamily', 'fontSize', 'fontColor', 'bulletedList', 'numberedList',
+                    'heading', '|', 'bold', 'italic', '|',
+                    'bulletedList', 'numberedList',
                     '|', 'blockQuote', 'mediaEmbed', 'undo', 'redo', 'uploadImage'
                 ],
-                fontFamily: {
-                    options: [
-                        'default', 'Arial, sans-serif', 'Courier New, Courier, monospace',
-                        'Georgia, serif', 'Times New Roman, Times, serif', 'Verdana, sans-serif'
-                    ]
-                },
-                fontSize: {
-                    options: ['small', 'default', 'big', '18px', '24px', '32px'],
-                    supportAllValues: true
-                },
-                fontColor: {
-                    columns: 6,
-                    documentColors: 12
-                },
+
                 ckfinder: {
                     uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
                 },

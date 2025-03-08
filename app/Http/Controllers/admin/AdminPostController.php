@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
+use Exception;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Category;
@@ -35,31 +36,36 @@ class AdminPostController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'title' => 'required|string|max:255',
-            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
-            'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:50000',
-            'content' => 'required',
-            'category_id' => 'required|exists:categories,id',
-            'is_published' => 'required|boolean',
-        ]);
+        try {
+            $request->validate([
+                'title' => 'required|string|max:255',
+                'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
+                'video' => 'nullable|mimes:mp4,mov,ogg,qt|max:50000',
+                'content' => 'required',
+                'category_id' => 'required|exists:categories,id',
+                'is_published' => 'required|boolean',
+            ]);
 
-        // Kiểm tra file trước khi lưu
-        $imagePath = $request->hasFile('image') ? $request->file('image')->store('images', 'public') : null;
-        $videoPath = $request->hasFile('video') ? $request->file('video')->store('videos', 'public') : null;
+            // Kiểm tra file trước khi lưu
+            $imagePath = $request->hasFile('image') ? $request->file('image')->store('images', 'public') : null;
+            $videoPath = $request->hasFile('video') ? $request->file('video')->store('videos', 'public') : null;
 
-        // Tạo bài viết
-        Post::create([
-            'title' => $request->title,
-            'image' => $imagePath,
-            'video' => $videoPath,
-            'content' => $request->content,
-            'category_id' => $request->category_id,
-            'is_published' => $request->is_published,
-            'user_id' => Auth::id(), // Lấy ID của user đang đăng nhập
-        ]);
+            // Tạo bài viết
+            Post::create([
+                'title' => $request->title,
+                'image' => $imagePath,
+                'video' => $videoPath,
+                'content' => $request->content,
+                'category_id' => $request->category_id,
+                'is_published' => $request->is_published,
+                'user_id' => Auth::id(), // Lấy ID của user đang đăng nhập
+            ]);
 
-        return redirect()->route('admin.posts.index')->with('success', 'Bài viết đã được thêm thành công.');
+            return redirect()->route('admin.posts.index')->with('success', 'Bài viết đã được thêm thành công.');
+        } catch (Exception $e) {
+            return redirect()->route('admin.posts.index')->with('error', 'Bài viết tạo không thành công: ' . $e->getMessage());
+        }
+
     }
 
 

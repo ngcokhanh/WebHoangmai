@@ -245,7 +245,7 @@
 		}
 
 		.footer .footer-section ul li a:hover {
-			color:rgb(255, 97, 19);
+			color: rgb(255, 97, 19);
 		}
 
 		.footer .social-icons {
@@ -462,57 +462,6 @@
 		function closePopup() {
 			document.querySelector('.popup-overlay').style.display = 'none';
 		}
-	</script>
-
-	<!-- Swiper JS -->
-	<!-- <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-	<script>
-		var swiper = new Swiper(".swiper", {
-			loop: true,
-			autoplay: {
-				delay: 3000,
-				disableOnInteraction: false,
-			},
-			navigation: {
-				nextEl: ".swiper-button-next",
-				prevEl: ".swiper-button-prev",
-			},
-			pagination: {
-				el: ".swiper-pagination",
-				clickable: true,
-			},
-		});
-	</script> -->
-
-	<script>
-		ClassicEditor
-			.create(document.querySelector('#editor'), {
-				toolbar: [
-					'heading', '|', 'bold', 'italic', 'underline', '|',
-					'fontFamily', 'fontSize', 'fontColor', 'bulletedList', 'numberedList',
-					'|', 'blockQuote', 'mediaEmbed', 'undo', 'redo'
-				],
-				fontFamily: {
-					options: [
-						'default', 'Arial, sans-serif', 'Courier New, Courier, monospace',
-						'Georgia, serif', 'Times New Roman, Times, serif', 'Verdana, sans-serif'
-					]
-				},
-				fontSize: {
-					options: ['small', 'default', 'big', '18px', '24px', '32px'],
-					supportAllValues: true
-				},
-				fontColor: {
-					columns: 6,
-					documentColors: 12
-				},
-				ckfinder: {
-					uploadUrl: "{{ route('ckeditor.upload', ['_token' => csrf_token()]) }}"
-				}
-			})
-			.catch(error => {
-				console.error(error);
-			});
 	</script>
 
 

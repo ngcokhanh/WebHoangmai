@@ -55,6 +55,7 @@ Route::resource('admin/users', AdminUserController::class)->names([
     'update' => 'admin.users.update',
     'destroy' => 'admin.users.destroy'
 ])->middleware('admin');
+
 Route::resource('admin/posts', AdminPostController::class)->names([
     'index' => 'admin.posts.index',
     'create' => 'admin.posts.create',
