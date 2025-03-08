@@ -40,8 +40,8 @@
         }
 
         .home-slideshow {
-            width: 100%;
-            height: 500px;
+            width: 1300px;
+            height: 550px;
             margin: auto;
             overflow: hidden;
             position: relative;
@@ -49,8 +49,8 @@
         }
 
         .home-slideshow .swiper {
-            width: 100%;
-            height: 100%;
+            /* width: 100%;
+                                                height: 500px; */
             display: flex;
             align-items: center;
         }
@@ -59,14 +59,14 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 100%;
+            /* height: 500px; */
         }
 
-        .home-slideshow img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            /* border-radius: 10px; */
+        .home-slideshow a img {
+            width: 1300px;
+            height: 550px;
+            object-fit: fill;
+            border-radius: 10px;
         }
 
         .home-introduction {
@@ -135,7 +135,7 @@
             <div class="swiper-wrapper">
                 @foreach($banners as $banner)
                     <div class="swiper-slide">
-                        <a href="{{ $banner->link }}" style="width: 100%; height: 100%;">
+                        <a href="{{ $banner->link }}">
                             <img src="{{ Storage::url($banner->image) }}" alt="Banner">
                         </a>
                     </div>

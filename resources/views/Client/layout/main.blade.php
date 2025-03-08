@@ -41,6 +41,8 @@
 		.navbar .menu {
 			display: flex;
 			align-items: center;
+			width: 100%;
+
 		}
 
 		.navbar .menu ul {
@@ -48,17 +50,23 @@
 			margin: 0;
 			padding: 0;
 			display: flex;
+			justify-content: space-around;
+			/* Changed from space-between to space-around */
+			width: 100%;
+			/* Ensure the menu takes full width */
 		}
 
 		.navbar .menu ul li {
 			position: relative;
 			margin: 0 1rem;
 			font-family: 'Alex Brush', cursive;
-			font-size: 25px;
+			font-size: 30px;
+			font-weight: bold;
+			/* Hoặc dùng 700 */
 		}
 
 		.navbar .menu ul li a {
-			color: rgb(251, 134, 17);
+			color: rgb(247, 109, 11);
 			text-decoration: none;
 			padding: 0.5rem 1rem;
 			display: block;
@@ -67,20 +75,22 @@
 
 		.navbar .menu ul li a:hover {
 			background-color: white;
-			color: rgb(255, 68, 0);
+			color: rgb(251, 46, 18);
 			border-radius: 5px;
 		}
 
 		.navbar .menu ul li .btn {
 			background-color: white;
-			color: #ff6600;
+			color: rgb(247, 109, 11);
 			border: none;
 			padding: 0.5rem 1rem;
 			cursor: pointer;
 			border-radius: 5px;
 			transition: background-color 0.3s, color 0.3s;
 			font-family: 'Alex Brush', cursive;
-			font-size: 15px;
+			font-size: 30px;
+			font-weight: bold;
+
 		}
 
 		.navbar .menu ul li .btn:hover {
@@ -359,13 +369,13 @@
 </head>
 
 <body>
+	<div class="logo">
+		<img src="{{ Storage::url('images/LOGOHMmoi.png') }}" alt="Logo">
+	</div>
 	<div class="navbar">
-		<div class="logo">
-			<img src="{{ Storage::url('images/LOGOHMmoi.png') }}" alt="Logo">
-		</div>
 		<div class="menu">
 			<ul>
-				<li><a href="{{  route('home')}}">Trang Chủ</a></li>
+				<li><a href="{{ route('home') }}">Trang Chủ</a></li>
 				<li>
 					<a href="#">Danh Mục</a>
 					<ul>
