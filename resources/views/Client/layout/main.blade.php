@@ -125,7 +125,7 @@
 		}
 
 		.motto {
-			padding: 2rem;
+			/* padding: 2rem; */
 			text-align: center;
 			background-color: #fff;
 			color: #ff6600;
@@ -245,7 +245,7 @@
 		}
 
 		.footer .footer-section ul li a:hover {
-			color: #ffcc99;
+			color:rgb(255, 97, 19);
 		}
 
 		.footer .social-icons {
@@ -428,7 +428,7 @@
 			<div class="footer-section">
 				<img style="	height: 80px;
 								margin-right: 1rem;
-								border-radius: 10px;" src="{{ Storage::url('images/LOGOHM.jpg') }}" alt="Logo">
+								border-radius: 10px;" src="{{ Storage::url('images/LOGOHMmoi.png') }}" alt="Logo">
 			</div>
 
 			<div class="footer-section">

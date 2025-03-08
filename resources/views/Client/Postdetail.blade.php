@@ -6,6 +6,10 @@
             padding: 2rem;
             background-color: #fff;
             color: #333;
+            max-width: 1000px;
+            /* Adjust the max-width as needed */
+            margin: 0 auto;
+            /* Center the content */
         }
 
         .post-detail h1 {

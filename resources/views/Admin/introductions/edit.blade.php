@@ -112,7 +112,7 @@
             </div>
             <div class="form-group">
                 <label for="content">Nội Dung</label>
-                <textarea id="editor" name="content" required>{{!!$intro->content}}</textarea>
+                <textarea id="editor" name="content" required>{{$intro->content}}</textarea>
             </div>
             <div class="form-group">
                 <label for="is_home">Xuất hiện tại trang chủ</label>
