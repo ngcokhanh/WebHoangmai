@@ -50,7 +50,7 @@
 
         .home-slideshow .swiper {
             /* width: 100%;
-                                                height: 500px; */
+                                                        height: 500px; */
             display: flex;
             align-items: center;
         }
@@ -147,7 +147,7 @@
         </div>
     </div>
     <div class="motto">
-        "Dấu ấn Hoàng Mai - Xây dựng tương lai"
+        <img src="{{ Storage::url('images/slogan.jpg') }}" alt="" style="width: 100%; border-radius: 10px;">
     </div>
     <div class="featured-articles">
         <h2>Bài Viết Mới Nhất</h2>

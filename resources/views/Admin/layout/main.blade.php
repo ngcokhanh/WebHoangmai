@@ -139,7 +139,7 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <img src="{{ Storage::url('images/LOGOHM.jpg') }}" alt="Logo">
+            <img src="{{ Storage::url('images/LOGOHMmoi.png') }}" alt="Logo">
             <h1>Admin Dashboard</h1>
         </div>
 

@@ -68,57 +68,7 @@
     </style>
 
     <div class="category-posts">
-        <div class="map-container">
-            <h2>Bản Đồ Di Tích Hoàng Mai</h2>
-            <img id="map-image" src="{{ Storage::url('images/Bandoditichhm.jpg') }}" usemap="#image-map" width="800"
-                height="490">
-            <map name="image-map">
-                <area shape="circle" coords="375,88,15" href="{{route('post.detail', '13')}}" alt="Khu tưởng niệm HVT">
-                <area shape="circle" coords="353,95,15" href="{{route('post.detail', '18')}}" alt="Chùa nga my">
-                <area shape="circle" coords="431,108,15" href="{{route('post.detail', '11')}}" alt="Đình Mai động">
-                <area shape="circle" coords="327,122,15" href="{{route('post.detail', '10')}}" alt="Đình Tương mai">
-                <area shape="circle" coords="427,148,15" href="{{route('post.detail', '12')}}" alt="Đền lư giang">
-                <area shape="circle" coords="588,226,15" href="{{route('post.detail', '16')}}" alt="Chùa nam dư hạ">
-                <area shape="circle" coords="606,224,15" href="{{route('post.detail', '15')}}" alt="Đình Nam dư hạ">
-                <area shape="circle" coords="268,327,15" href="{{route('post.detail', '17')}}" alt="Chùa tứ kỳ">
-                <area shape="circle" coords="407,272,15" href="{{route('post.detail', '19')}}" alt="Công viên yên sở">
-                <area shape="circle" coords="184,348,15" href="{{route('post.detail', '20')}}" alt="Hồ linh đàm">
-                <area shape="circle" coords="240,160,15" href="{{route('post.detail', '14')}}" alt="Công viên yên sở">
-            </map>
-        </div>
-
-        <script>
-            function scaleMap() {
-                let img = document.getElementById("map-image");
-                let originalWidth = 800; // Kích thước gốc của ảnh
-                let originalHeight = 490;
-
-                let currentWidth = img.clientWidth;
-                let currentHeight = img.clientHeight;
-
-                let scaleX = currentWidth / originalWidth;
-                let scaleY = currentHeight / originalHeight;
-
-                document.querySelectorAll("area").forEach(area => {
-                    let coords = area.dataset.originalCoords.split(",").map(Number);
-                    let newCoords = coords.map((value, index) =>
-                        index % 2 === 0 ? Math.round(value * scaleX) : Math.round(value * scaleY)
-                    );
-                    area.coords = newCoords.join(",");
-                });
-            }
-
-            window.onload = function () {
-                document.querySelectorAll("area").forEach(area => {
-                    area.dataset.originalCoords = area.coords; // Lưu tọa độ gốc
-                });
-                scaleMap();
-            };
-
-            window.onresize = scaleMap; // Cập nhật tọa độ khi thay đổi kích thước
-        </script>
-
-        <h2>Bài Viết Cùng Danh Mục</h2>
+        <h2>Bài Viết Cùng Danh Mục {{ $category->name }}</h2>
         <div class="posts">
             @foreach ($posts as $post)
                 <div class="post">
