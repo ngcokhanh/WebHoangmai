@@ -5,6 +5,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Trang Chủ</title>
+	<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+
 	<style>
 		/* Scoped CSS for main.blade.php */
 		body {
@@ -16,7 +18,7 @@
 		}
 
 		.navbar {
-			background-color: #ff6600;
+			background-color: white;
 			padding: 1rem;
 			display: flex;
 			justify-content: space-between;
@@ -51,10 +53,12 @@
 		.navbar .menu ul li {
 			position: relative;
 			margin: 0 1rem;
+			font-family: 'Alex Brush', cursive;
+			font-size: 25px;
 		}
 
 		.navbar .menu ul li a {
-			color: white;
+			color: rgb(251, 134, 17);
 			text-decoration: none;
 			padding: 0.5rem 1rem;
 			display: block;
@@ -63,7 +67,7 @@
 
 		.navbar .menu ul li a:hover {
 			background-color: white;
-			color: #ff6600;
+			color: rgb(255, 68, 0);
 			border-radius: 5px;
 		}
 
@@ -75,10 +79,12 @@
 			cursor: pointer;
 			border-radius: 5px;
 			transition: background-color 0.3s, color 0.3s;
+			font-family: 'Alex Brush', cursive;
+			font-size: 15px;
 		}
 
 		.navbar .menu ul li .btn:hover {
-			background-color: #ff6600;
+			background-color: rgb(250, 140, 67);
 			color: white;
 		}
 
@@ -87,22 +93,24 @@
 			position: absolute;
 			top: 100%;
 			left: 0;
-			background-color: #ff6600;
-			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+			/* background-color: #ff6600; */
+			/* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
 			z-index: 1;
 		}
 
 		.navbar .menu ul li:hover ul {
 			display: block;
+			/* color: #ff6600; */
 		}
 
 		.navbar .menu ul li ul li {
 			width: 200px;
+			font-family: 'alex brush';
 		}
 
 		.navbar .menu ul li ul li a:hover {
 			background-color: white;
-			color: #ff6600;
+			color: rgb(255, 85, 0);
 			border-radius: 5px;
 		}
 
@@ -342,6 +350,7 @@
 			}
 		}
 	</style>
+
 	<!-- Swiper CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css">
 
@@ -352,7 +361,7 @@
 <body>
 	<div class="navbar">
 		<div class="logo">
-			<img src="{{ Storage::url('images/LOGOHM.jpg') }}" alt="Logo">
+			<img src="{{ Storage::url('images/LOGOHMmoi.png') }}" alt="Logo">
 		</div>
 		<div class="menu">
 			<ul>
