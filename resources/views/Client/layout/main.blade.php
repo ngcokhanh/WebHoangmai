@@ -103,8 +103,9 @@
 			position: absolute;
 			top: 100%;
 			left: 0;
-			/* background-color: #ff6600; */
-			/* box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); */
+			background-color: white;
+			/* Set background color to white */
+			box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 			z-index: 1;
 		}
 
@@ -385,7 +386,7 @@
 					</ul>
 				</li>
 				<li><a href="{{ route('gioithieu') }}">Giới Thiệu</a></li>
-				<li><a href="#">Liên Hệ</a></li>
+				<li><a href="{{route('viewcontact')}}">Góp ý</a></li>
 				@if(Auth::check())
 					<li><a href="{{ route('logout') }}"
 							onclick="return confirm('Bạn có chắc chắn muốn đăng xuất?');"><button class="btn">Đăng

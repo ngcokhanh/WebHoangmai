@@ -65,6 +65,19 @@
             height: auto;
             border-radius: 10px;
         }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .post {
+                width: 45%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .post {
+                width: 100%;
+            }
+        }
     </style>
 
     <div class="category-posts">

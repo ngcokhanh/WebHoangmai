@@ -32,7 +32,6 @@
             border-radius: 5px;
             height: 40px;
             margin-right: 1rem;
-            max-width: 100%;
         }
 
         .navbar .account {
@@ -155,7 +154,7 @@
                 <li><a href="{{ route('admin.users.index') }}">Quản Lý Người Dùng</a></li>
                 <li><a href="{{ route('admin.posts.index') }}">Quản Lý Bài Viết</a></li>
                 <li><a href="{{ route('admin.banners.index') }}">Quản Lý Banner</a></li>
-                <li><a href="{{ route('admin.intros.index') }}">Quản Lý Giới Thiệu</a></li>
+                <li><a href="{{ route('admin.contacts.index') }}">Quản Lý Liên Hệ</a></li>
                 <li><a href="{{ route('admin.categories.index') }}">Quản Lý Danh Mục</a></li>
             </ul>
         </div>
@@ -209,6 +208,8 @@
                 console.error(error);
             });
     </script>
+
+
 </body>
 
 </html>

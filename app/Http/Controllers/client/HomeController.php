@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 use App\Models\Banner;
 use App\Models\Category;
@@ -116,5 +117,24 @@ class HomeController extends Controller
         }
 
         return view('Client.Account', compact('categories', 'user'));
+    }
+
+    public function viewcontact()
+    {
+        $categories = Category::all();
+        return view('client.contact', compact('categories'));
+    }
+    public function submitcontact(Request $request)
+    {
+        $request->validate([
+            'name' => 'required|string',
+            'email' => 'email|nullable',
+            'content' => 'required|string',
+            'phone' => 'string',
+            'address' => 'nullable'
+        ]);
+
+        Contact::create($request->all());
+        return redirect()->route('home')->with('success', 'Góp ý của bạn đã được gửi.');
     }
 }
