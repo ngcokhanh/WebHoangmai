@@ -40,17 +40,15 @@
         }
 
         .home-slideshow {
-            width: 1300px;
-            height: 550px;
+            width: 100%;
+            max-width: 1300px;
+            height: auto;
             margin: auto;
             overflow: hidden;
             position: relative;
-            /* border-radius: 10px; */
         }
 
         .home-slideshow .swiper {
-            /* width: 100%;
-                                                        height: 500px; */
             display: flex;
             align-items: center;
         }
@@ -59,19 +57,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            /* height: 500px; */
         }
 
         .home-slideshow a img {
-            width: 1300px;
-            height: 550px;
+            width: 100%;
+            height: auto;
             object-fit: fill;
             border-radius: 10px;
         }
 
         .home-introduction {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             padding: 2rem;
             background-color: #fff;
@@ -82,10 +79,15 @@
 
         .home-introduction img {
             width: 100%;
-            max-width: 600px;
+            max-width: 1300px;
             height: auto;
+            object-fit: fill;
             border-radius: 10px;
-            margin-bottom: 1rem;
+            margin-right: 1rem;
+        }
+
+        .home-introduction div {
+            width: 70%;
         }
 
         .home-introduction h2 {
@@ -107,11 +109,17 @@
             }
 
             .home-slideshow {
-                height: 300px;
+                height: auto;
             }
 
             .home-introduction {
                 padding: 1rem;
+                flex-direction: column;
+            }
+
+            .home-introduction img {
+                margin-right: 0;
+                margin-bottom: 1rem;
             }
         }
 
@@ -121,7 +129,7 @@
             }
 
             .home-slideshow {
-                height: 200px;
+                height: auto;
             }
 
             .home-introduction {
@@ -162,19 +170,23 @@
         </div>
     </div>
 
-    @foreach ($intros as $intro)
-        <div class="home-introduction">
-            <div>
-                <a href="{{ route('gioithieu') }}">
-                    <h2>{{$intro->title}}</h2>
-                </a>
-                <p>
-                    {{Str::limit($intro->content, 500)}}
-                </p>
-            </div>
-            <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->image }}">
-        </div>
-    @endforeach
+    <div class="home-introduction">
+        <img src="{{Storage::url('images/intros.jpg') }}" alt="" class="intro">
+    </div>
+
+    <!-- @foreach ($intros as $intro)
+                                        <div class="home-introduction">
+                                            <div>
+                                                <a href="{{ route('gioithieu') }}">
+                                                    <h2>{{$intro->title}}</h2>
+                                                </a>
+                                                <p>
+                                                    {{Str::limit($intro->content, 500)}}
+                                                </p>
+                                            </div>
+                                            <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->image }}">
+                                        </div>
+                                    @endforeach -->
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

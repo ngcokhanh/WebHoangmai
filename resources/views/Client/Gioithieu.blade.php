@@ -9,6 +9,10 @@
             width: 100%;
             max-width: 1400px;
             margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
         }
 
         .introduction-page h1 {
@@ -22,10 +26,9 @@
         }
 
         .introduction-page img {
-            width: 100%;
-            max-width: 800px;
-            height: auto;
-            object-fit: cover;
+            width: 1300px;
+            height: 550px;
+            object-fit: fill;
             border-radius: 10px;
             margin-bottom: 1rem;
             display: block;
@@ -52,21 +55,22 @@
     </style>
 
     <div class="introduction-page">
-        @foreach ($intros as $intro)
-            <h1>{{ $intro->title }}</h1>
-            <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->title }}">
-            <div class="introduction-content">
-                {!! $intro->content !!}
-            </div>
-            @if($intro->video)
-                <div class="introduction-video">
-                    <video controls>
-                        <source src="{{ Storage::url($intro->video) }}" type="video/mp4">
-                        Trình duyệt của bạn không hỗ trợ video.
-                    </video>
-                </div>
-            @endif
-        @endforeach
+        <img src="{{ Storage::url('images/intros.jpg') }}" alt="">
+
+        <!-- @foreach ($intros as $intro)
+                    <h1>{{ $intro->title }}</h1>
+                    <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->title }}">
+                    <div class="introduction-content">
+                        {!! $intro->content !!}
+                    </div>
+                    @if($intro->video)
+                        <div class="introduction-video">
+                            <video controls>
+                                <source src="{{ Storage::url($intro->video) }}" type="video/mp4">
+                                Trình duyệt của bạn không hỗ trợ video.
+                            </video>
+                        </div>
+                    @endif
+                @endforeach -->
     </div>
-  
 @endsection

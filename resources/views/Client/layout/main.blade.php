@@ -441,10 +441,11 @@
 			</div>
 
 			<div class="footer-section">
-				<h3>Thông Tin Liên Hệ</h3>
-				<p>Địa chỉ: LK 05 - HDI Home, 201 Nguyễn Tuân, Phường Nhân Chính, Quận Thanh Xuân</p>
-				<p>Điện thoại: <a href="tel:0904255215">0904 255 215</a></p>
-				<p>Email: <a href="mailto:info@cauvong.vn">info@cauvong.vn</a></p>
+				<h3>Hành trang lớp 6</h3>
+				<p>Giáo viên: Hoàng Phương Anh</p>
+				<p>Điện thoại: <a href="tel:0904255215">0966920899</a></p>
+				<p>Địa chỉ: Trường tiểu học Mai Động Số 1 Lĩnh Nam, Quận Hoàng Mai, Thành Phố Hà Nội</p>
+				<p>Email: <a href="phuonganhhoang0620@gmail.com">phuonganhhoang0620@gmail.com</a></p>
 			</div>
 			<div class="footer-section">
 				<h3>Kết Nối Với Chúng Tôi</h3>

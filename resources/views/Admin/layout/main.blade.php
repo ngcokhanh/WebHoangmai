@@ -32,6 +32,7 @@
             border-radius: 5px;
             height: 40px;
             margin-right: 1rem;
+            max-width: 100%;
         }
 
         .navbar .account {
@@ -208,8 +209,6 @@
                 console.error(error);
             });
     </script>
-
-
 </body>
 
 </html>
