@@ -44,6 +44,7 @@ class AdminPostController extends Controller
                 'content' => 'required',
                 'category_id' => 'required|exists:categories,id',
                 'is_published' => 'required|boolean',
+                'linkquiziz' => 'string|nullable',
             ]);
 
             // Kiểm tra file trước khi lưu
@@ -59,6 +60,7 @@ class AdminPostController extends Controller
                 'category_id' => $request->category_id,
                 'is_published' => $request->is_published,
                 'user_id' => Auth::id(), // Lấy ID của user đang đăng nhập
+                'linkquiziz' => $request->linkquiziz
             ]);
 
             return redirect()->route('admin.posts.index')->with('success', 'Bài viết đã được thêm thành công.');
@@ -100,6 +102,7 @@ class AdminPostController extends Controller
             'content' => 'required',
             'category_id' => 'required|exists:categories,id',
             'is_published' => 'required|boolean',
+            'linkquiziz' => 'string|nullable',
         ]);
 
         $post = Post::findOrFail($id);
@@ -132,6 +135,7 @@ class AdminPostController extends Controller
             'content' => $request->content,
             'category_id' => $request->category_id,
             'is_published' => $request->is_published,
+            'linkquiziz' => $request->linkquiziz,
         ]);
 
         return redirect()->route('admin.posts.index')->with('success', 'Bài viết đã được cập nhật thành công.');

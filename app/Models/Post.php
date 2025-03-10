@@ -16,6 +16,7 @@ class Post extends Model
         'image',
         'video',
         'user_id',
+        'linkquiziz',
     ];
     public function category()
     {

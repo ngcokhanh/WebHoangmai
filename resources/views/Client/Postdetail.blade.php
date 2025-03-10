@@ -49,9 +49,12 @@
 
     <div class="post-detail">
         <h1>{{ $post->title }}</h1>
+        @if ($post->linkquiziz)
+            <a href="{{ $post->linkquiziz }}" target="_blank">Tham gia bài quiziz</a>
+        @endif
         <p><em>Đăng vào: {{ $post->created_at }}</em></p>
         <img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">
-        <div class="post-content" >
+        <div class="post-content">
             {!! $post->content !!}
         </div>
         @if($post->video)

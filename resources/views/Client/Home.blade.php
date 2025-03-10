@@ -164,6 +164,9 @@
                 <div class="home-article">
                     <img src="{{Storage::url($item->image)}}" alt="{{ $item->title }}">
                     <h3>{{ $item->title }}</h3>
+                    @if($item->linkquiziz)
+                        <a href="{{$item->linkquiziz}}" target="_blank">Tham gia</a>
+                    @endif
                     <a href="{{ route('post.detail', $item->id) }}" class="btn">Xem Chi Tiết</a>
                 </div>
             @endforeach
@@ -175,18 +178,18 @@
     </div>
 
     <!-- @foreach ($intros as $intro)
-                                        <div class="home-introduction">
-                                            <div>
-                                                <a href="{{ route('gioithieu') }}">
-                                                    <h2>{{$intro->title}}</h2>
-                                                </a>
-                                                <p>
-                                                    {{Str::limit($intro->content, 500)}}
-                                                </p>
-                                            </div>
-                                            <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->image }}">
-                                        </div>
-                                    @endforeach -->
+                                                                            <div class="home-introduction">
+                                                                                <div>
+                                                                                    <a href="{{ route('gioithieu') }}">
+                                                                                        <h2>{{$intro->title}}</h2>
+                                                                                    </a>
+                                                                                    <p>
+                                                                                        {{Str::limit($intro->content, 500)}}
+                                                                                    </p>
+                                                                                </div>
+                                                                                <img src="{{ Storage::url($intro->image) }}" alt="{{ $intro->image }}">
+                                                                            </div>
+                                                                        @endforeach -->
 
     <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>

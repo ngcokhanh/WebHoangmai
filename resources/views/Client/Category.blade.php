@@ -87,6 +87,10 @@
                 <div class="post">
                     <img src="{{ Storage::url($post->image) }}" alt="{{ $post->title }}">
                     <h3>{{ $post->title }}</h3>
+                    @if($post->linkquiziz)
+                        <a href="{{$post->linkquiziz}}" target="_blank"
+                            style="text-decoration: none; color: #ff6600; margin-bottom: 5px;">Tham gia</a>
+                    @endif
                     <a href="{{ route('post.detail', $post->id) }}" class="btn">Xem Chi Tiết</a>
                 </div>
             @endforeach

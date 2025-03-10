@@ -100,6 +100,10 @@
                 <textarea id="editor" name="content" required>{{ $post->content }}</textarea>
             </div>
             <div class="form-group">
+                <label for="title">Đường dẫn</label>
+                <input type="text" id="title" name="linkquiziz" value="{{$post->linkquiziz}}">
+            </div>
+            <div class="form-group">
                 <label for="category">Danh Mục</label>
                 <select id="category" name="category_id" required>
                     @foreach ($categories as $category)
